@@ -3,9 +3,19 @@
 <% @books.each do |book| %>
 
   <p>Title</p>
-  <span><%= book.title %></span>
+  <span>
+    <%= book.title %>
+  </span>
 
   <p>Body</p>
-  <span><%= book.body %></span>
+  <span>
+    <%= book.body %>
+  </span>
 
+
+  <%= link_to "Show", book_path(book.id) %>
+
+  <%= link_to "Edit", /edit %>
+
+  <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 <% end %>
